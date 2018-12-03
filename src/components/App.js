@@ -21,16 +21,20 @@ class App extends React.Component {
 	}
 
 	runSearch(event) {
-		let term = event.target.value.toLowerCase();
+		event.preventDefault();
+		let term = document.getElementById('searchInput')
+					.value.toLowerCase();
 		let results = this.state.movies.filter(movie => 
 			movie.title.toLowerCase().indexOf(term) > -1
 		);
+		this.setState({movies: results});
+		console.log(this.state.movies);
 	}
 
 	render() {
 		return (
 			<div>
-				<Search onChangeHandler={this.runSearch.bind(this)}/>
+				<Search onSearchHandler={this.runSearch.bind(this)}/>
 	  			<MovieList movies={this.state.movies}/>
 	  		</div>
 	  	);
