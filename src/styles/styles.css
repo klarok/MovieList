@@ -1,0 +1,29 @@
+#app {
+	font-family: Helvetica;
+	background-color:#3e2e63;
+	width:400px;
+	box-sizing: content-box;
+	padding:10px;
+}
+
+.header {
+	font-size:1.5em;
+	color:#fff;
+	/*background-color: #e0e0e0;*/
+	border-bottom:solid 1px #09da2e;
+}
+
+form {
+	margin:5px;
+}
+
+ul.movie-list {
+	list-style: none;
+	padding:0;
+}
+.movie-entry {
+	background-color: #90edc4;
+	border: solid 1px black;
+	padding:10px;
+	margin:2px;
+}

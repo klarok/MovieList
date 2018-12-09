@@ -1,7 +1,7 @@
 import React from 'react';
 
 var Movie = ({movie}) => (
-	<li>{movie.title}</li>
+	<li className="movie-entry">{movie.title}</li>
 );
 
 export default Movie;

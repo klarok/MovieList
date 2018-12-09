@@ -3,9 +3,8 @@ import Movie from './Movie.js';
 
 var MovieList = ({movies}) => (
 	<div>
-		<div className="header">MovieList</div>
 		<div className="list">
-			<ul>
+			<ul className="movie-list">
 				{
 					movies.map(m => (
 						<Movie 
