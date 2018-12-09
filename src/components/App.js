@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import MovieList from './MovieList.js';
 import Search from './Search.js';
 import Input from './Input.js';
-import '../styles/appStyles.scss';
+import '../styles/styles.scss';
 
 var sampleMovies = [
   {title: 'Mean Girls'},
@@ -19,23 +19,26 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			allMovies: sampleMovies,
-			movies: sampleMovies
+			allMovies: [],
+			movies: []
 		}
 		
 	}
 
 	runSearch(event) {
-		event.preventDefault();
+		// event.preventDefault();
+		this._filterMoviesByTerm();
+	}
+
+	_filterMoviesByTerm() {
 		let term = document.getElementById('searchInput')
 					.value.toLowerCase();
-		// let term = event.target.value;
 		let results = (term === '') ? this.state.allMovies : 
 			this.state.allMovies.filter(movie => 
 				movie.title.toLowerCase().indexOf(term) > -1
 		);
 		this.setState({movies: results});
-		console.log(this.state.movies);
+		console.log('Show movies', this.state.movies);
 	}
 
 	addMovie(event) {
@@ -44,11 +47,12 @@ class App extends React.Component {
 								.getElementById('movieInput')
 								.value
 		};
-		this.setState({
-			allMovies: (this.state.allMovies.push(newMovie))
-		});
-		//If filter on, add newMovie to movies if qualifies
-		console.log(this.state.allMovies);
+		this.setState(
+			{
+				allMovies: this.state.allMovies.concat([newMovie])
+			},
+			this._filterMoviesByTerm
+		);
 	}
 
 	render() {

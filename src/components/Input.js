@@ -4,7 +4,6 @@ var Input = ({onInputHandler}) => (
 	<form>
 		<input type="text"
 			id="movieInput"
-			
 		/>
 		<input type="button" 
 			className="add-movie"

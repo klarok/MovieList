@@ -4,12 +4,8 @@ var Search = ({onSearchHandler}) => (
 	<form>
 		<input type="text" 
 			id="searchInput"
-			 
+			 onChange={onSearchHandler}
 	 	/>
-	 	<input type="button" 
-			value="Go"
-			onClick={onSearchHandler} 
-		/>
 	</form>
 );
 

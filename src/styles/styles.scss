@@ -1,0 +1,53 @@
+$theme-font: verdana, sans-serif;
+$app-bg-color:#eef9f3;
+// #3e2e63;
+$accent-color:#a9babe;
+$header-color:#e3a332;
+$movie-bg-color:#509f95;
+
+#app {
+	font-family: $theme-font;
+	background-color:$app-bg-color;
+	width:400px;
+	box-sizing: content-box;
+	padding:10px;
+}
+
+.header {
+	font-size:1.5em;
+	color:$header-color;
+	/*background-color: #e0e0e0;*/
+	border-bottom:solid 1px $accent-color;
+}
+
+form {
+	height:1.5em;
+	margin:5px;
+	display:flex;
+	// border:solid 1px black;
+}
+input[type="text"] {
+	// height:1.5em;
+	color:#fff;
+	background-color:#020f21;
+	border:none;
+}
+input[type="button"] {
+	font-size:.9em;
+	color:$app-bg-color;
+	background-color:$movie-bg-color;
+	border:none;
+	min-width:50px;
+	margin-left:5px;
+}
+
+ul.movie-list {
+	list-style: none;
+	padding:0;
+}
+.movie-entry {
+	background-color: $movie-bg-color;
+	border: solid 1px $accent-color;
+	padding:10px;
+	margin:2px;
+}
