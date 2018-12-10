@@ -7,8 +7,7 @@ var MovieList = ({movies}) => (
 			<ul className="movie-list">
 				{
 					movies.map(m => (
-						<Movie 
-							movie={m}/>
+						<Movie movie={m}/>
 						)
 					)
 				}

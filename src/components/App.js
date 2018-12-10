@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MovieList from './MovieList.js';
-import Search from './Search.js';
+import MovieListContainer from '../containers/MovieListContainer.js';
+import SearchContainer from '../containers/SearchContainer.js';
+//import Search from './Search.js';
 import Input from './Input.js';
 import '../styles/styles.scss';
 
@@ -16,58 +17,53 @@ var sampleMovies = [
 ];
 
 class App extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			allMovies: [],
-			movies: []
-		}
+	// constructor() {
+	// 	super();
+	// 	this.state = {
+	// 		allMovies: [],
+	// 		movies: []
+	// 	}
 		
-	}
+	// }
 
-	runSearch(event) {
-		// event.preventDefault();
-		this._filterMoviesByTerm();
-	}
+	// runSearch(event) {
+	// 	// event.preventDefault();
+	// 	this._filterMoviesByTerm();
+	// }
 
-	_filterMoviesByTerm() {
-		let term = document.getElementById('searchInput')
-					.value.toLowerCase();
-		let results = (term === '') ? this.state.allMovies : 
-			this.state.allMovies.filter(movie => 
-				movie.title.toLowerCase().indexOf(term) > -1
-		);
-		this.setState({movies: results});
-		console.log('Show movies', this.state.movies);
-	}
+	// _filterMoviesByTerm() {
+	// 	let term = document.getElementById('searchInput')
+	// 				.value.toLowerCase();
+	// 	let results = (term === '') ? this.state.allMovies : 
+	// 		this.state.allMovies.filter(movie => 
+	// 			movie.title.toLowerCase().indexOf(term) > -1
+	// 	);
+	// 	this.setState({movies: results});
+	// 	console.log('Show movies', this.state.movies);
+	// }
 
-	addMovie(event) {
-		event.preventDefault();
-		let newMovie = {title: document
-								.getElementById('movieInput')
-								.value
-		};
-		this.setState(
-			{
-				allMovies: this.state.allMovies.concat([newMovie])
-			},
-			this._filterMoviesByTerm
-		);
-	}
+	// addMovie(event) {
+	// 	event.preventDefault();
+	// 	let newMovie = {title: document
+	// 							.getElementById('movieInput')
+	// 							.value
+	// 	};
+	// 	this.setState(
+	// 		{
+	// 			allMovies: this.state.allMovies.concat([newMovie])
+	// 		},
+	// 		this._filterMoviesByTerm
+	// 	);
+	// }
 
 	render() {
 		return (
 			<div>
 				<div className="header">MovieList</div>
-				<Input onInputHandler={this.addMovie.bind(this)}/>
-				<Search onSearchHandler={this.runSearch.bind(this)}/>
-	  			<MovieList movies={this.state.movies}/>
+				<SearchContainer />
+	  			<MovieListContainer />
 	  		</div>
 	  	);
 	}
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('app')
-);
+ export default App;
