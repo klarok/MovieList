@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MovieListContainer from '../containers/MovieListContainer.js';
 import SearchContainer from '../containers/SearchContainer.js';
+import InputContainer from '../containers/InputContainer.js';
 //import Search from './Search.js';
-import Input from './Input.js';
+// import Input from './Input.js';
 import '../styles/styles.scss';
 
 var sampleMovies = [
@@ -60,6 +61,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<div className="header">MovieList</div>
+				<InputContainer />
 				<SearchContainer />
 	  			<MovieListContainer />
 	  		</div>

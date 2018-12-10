@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import filterBySearch from './filterBySearch';
-import allMovies from './allMovies';
+import listAllMovies from './listAllMovies';
 
 export default combineReducers({
-	movies: allMovies,
+	movies: listAllMovies,
 	searchFilter: filterBySearch
 });

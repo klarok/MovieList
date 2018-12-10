@@ -7,13 +7,14 @@ var sampleMovies = [
   {title: 'Paprika'}
 ];
 
-var allMovies = (state = sampleMovies, action) => {
+var listAllMovies = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_MOVIE':
-			return [...state, action.movie];
+			let newMovie = {title: action.movie};
+			return [...state, newMovie];
 		default:
 			return state;
 	}
 }
 
-export default allMovies;
+export default listAllMovies;
