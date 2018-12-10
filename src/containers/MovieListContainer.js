@@ -42,6 +42,7 @@ const mapDispatchToProps = dispatch => ({
 		return dispatch(toggleWatch.Status(e.target.getAttribute('data-movie-id')));
 	},
 	filterByWatchHandler: e => {
+		console.log(e.target.value);
 		return dispatch(setFilter.Watch(e.target.value));
 	}
 });
