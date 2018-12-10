@@ -41,7 +41,13 @@ input[type="button"] {
 	margin-left:5px;
 }
 
+.show-watch div {
+	border:solid 1px $accent-color;
+	padding:10px;
+	display:inline-block;
+}
 ul.movie-list {
+	background-color:blue;
 	list-style: none;
 	padding:0;
 }

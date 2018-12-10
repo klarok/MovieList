@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Search from '../components/Search.js';
-import searchMovies from '../actions/searchMovies.js';
+import setFilter from '../actions/setFilter.js';
 
 const mapDispatchToProps = dispatch => ({
-	onSearchHandler: e => dispatch(searchMovies(e.target.value))
+	onSearchHandler: e => dispatch(setFilter.Search(e.target.value))
 });
 
 var SearchContainer = connect(null, mapDispatchToProps)(Search);
